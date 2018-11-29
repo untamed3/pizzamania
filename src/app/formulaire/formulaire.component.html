@@ -1,3 +1,57 @@
-<p>
-  formulaire works!
-</p>
+<div>
+
+  <style>
+    .ng-invalid:not(form) { color:red; }
+    .ng-valid[required], .ng-valid.required { color:green; }
+  </style>
+
+  <h1>Pizza Mania</h1>
+
+  <form #formulaire="ngForm">
+    <div class="row col-sm-4">
+
+      <label class="col-sm-4" for="pate" >Pate</label>
+      <select class="col-sm-4" id="pate" name="pate" [(ngModel)]="pizza.pate" ng-model="pate">
+        <option value="fine">Fine</option>
+        <option value="epaisse">Epaisse</option>
+      </select>
+
+    </div>
+    <div class="row col-sm-4">
+
+      <label class="col-sm-4">Base</label>
+
+      <input type="radio" name="base" id="tomates" value="tomates" [(ngModel)]="pizza.base"/> <label for="tomates">Tomates</label>
+      <input type="radio" name="base" id="creme" value="creme" [(ngModel)]="pizza.base"/> <label for="creme">Crème</label>
+    </div>
+
+    <div class="row col-sm-4">
+      <h3 class="col-sm-4">Ingredients</h3>
+      <div class="row col-sm-12">
+        <div class="col-sm-6">
+          <input type="checkbox" id="anchois" name="anchois" [(ngModel)]="pizza.achois"/>
+          <label for="anchois">Anchois 1€</label>
+        </div>
+        <div class="col-sm-6">
+          <input type="checkbox" id="jambon" name="jambon" [(ngModel)]="pizza.jambon"/>
+          <label for="jambon">Jambon 2€</label>
+        </div>
+        <div class="col-sm-6">
+          <input type="checkbox" id="miel" name="miel" [(ngModel)]="pizza.miel"/>
+          <label for="miel">Miel 2€</label>
+        </div>
+        <div class="col-sm-6">
+          <input type="checkbox" id="magret" name="magret" [(ngModel)]="pizza.magret"/>
+          <label for="magret">Magret 4€</label>
+        </div>
+      </div>
+    </div>
+
+    <h3>Prix: {{pizza.prix()}}</h3>
+
+    <input value="Commander" type="submit" (click)="" [disabled]="validateForm()"/>
+
+  </form>
+  <h1></h1>
+  <pre>{{pizza | json}}</pre>
+</div>

@@ -1,26 +1,29 @@
 export class PizzaModel {
-
-
-  private miel: boolean;
-  private achois: boolean;
-  private jambon: boolean;
-  private magret: boolean;
-  private pate: string;
-  private base: string;
-  private prix: number;
-  private commander: boolean;
-  private auteur: string;
+  miel: boolean;
+  achois: boolean;
+  jambon: boolean;
+  magret: boolean;
+  pate: string;
+  base: string;
+  commander: boolean;
 
 
   constructor() {
-    this.auteur = 'Joris le con';
     this.achois = false;
     this.miel = false;
     this.jambon = false;
     this.magret = false;
     this.pate = null;
     this.base = null;
-    this.prix = 0;
     this.commander = false;
   }
+  public prix():number {
+    let prix = 8;
+    if(this.miel) { prix+=2; }
+    if(this.jambon) { prix+=2; }
+    if(this.magret) { prix+=4; }
+    if(this.achois) { prix+=1; }
+    return prix;
+  }
+
 }

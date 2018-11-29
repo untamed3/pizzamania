@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PizzaModel} from "../models/pizza.model";
 
 @Component({
   selector: 'app-formulaire',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulaireComponent implements OnInit {
 
-  constructor() {
+  pizza = new PizzaModel();
 
+  constructor() {
   }
 
   ngOnInit() {
+  }
+
+  validateForm(){
+    let pizza = this.pizza;
+    return !pizza.base || !pizza.pate || !(pizza.achois || pizza.magret || pizza.miel || pizza.jambon);
   }
 
 }
