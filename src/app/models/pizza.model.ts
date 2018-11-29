@@ -1,4 +1,6 @@
 export class PizzaModel {
+
+
   private miel: boolean;
   private achois: boolean;
   private jambon: boolean;
@@ -8,6 +10,8 @@ export class PizzaModel {
   private prix: number;
   private commander: boolean;
   private auteur: string;
+
+
   constructor() {
     this.auteur = 'Joris le con';
     this.achois = false;
