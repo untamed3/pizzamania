@@ -7,10 +7,12 @@ import {FormsModule} from '@angular/forms';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import {RouterModule, Routes} from "@angular/router";
 import { CommandeComponent } from './commande/commande.component';
-import { AcceuilComponent } from './acceuil/acceuil.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import {PizzaService} from "./services/pizza.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 const routes: Routes = [
-  {path: '', component: AcceuilComponent},
+  {path: '', component: AccueilComponent},
   {path: 'formulaire', component: FormulaireComponent},
   {path: 'commande', component: CommandeComponent},
 ];
@@ -20,15 +22,19 @@ const routes: Routes = [
     AppComponent,
     FormulaireComponent,
     CommandeComponent,
-    AcceuilComponent,
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    PizzaService,
+    HttpClient,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

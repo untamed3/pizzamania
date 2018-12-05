@@ -1,3 +1,5 @@
-<p>
-  commande works!
-</p>
+
+<div *ngIf="isLoading === true">
+  Loading....
+</div>
+<pre *ngIf="isLoading === false">{{ pizza | json }}</pre>
