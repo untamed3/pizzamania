@@ -9,12 +9,13 @@ import {PizzaService} from "../services/pizza.service";
 })
 export class FormulaireComponent implements OnInit {
 
-  pizza = new PizzaModel();
-
+  private pizza:PizzaModel = null;
   constructor(private pizzaService:PizzaService) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.pizza = (this.pizzaService.getPizzaPrecedente() !== null )? this.pizzaService.getPizzaPrecedente() : new PizzaModel();
+  }
 
   handleClickCommander(){
     this.pizzaService.setPizzaCommande(this.pizza);

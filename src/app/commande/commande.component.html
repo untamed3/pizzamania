@@ -1,5 +1,11 @@
 
 <div *ngIf="isLoading === true">
-  Loading....
+  <img src="../../assets/img/loading.gif" width="150">
 </div>
-<pre *ngIf="isLoading === false">{{ pizza | json }}</pre>
+<div *ngIf="isLoading === false">
+  <p>{{message}} </p>
+
+  <pre>{{pizza | json}}</pre>
+
+  <button routerLink="/formulaire">Commander une autre pizza</button>
+</div>

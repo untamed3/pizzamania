@@ -10,11 +10,13 @@ import { CommandeComponent } from './commande/commande.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import {PizzaService} from "./services/pizza.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { PizzaPrecedenteComponent } from './pizza-precedente/pizza-precedente.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
   {path: 'formulaire', component: FormulaireComponent},
   {path: 'commande', component: CommandeComponent},
+  {path: 'pizzaPrecedente', component: PizzaPrecedenteComponent},
 ];
 
 @NgModule({
@@ -23,6 +25,7 @@ const routes: Routes = [
     FormulaireComponent,
     CommandeComponent,
     AccueilComponent,
+    PizzaPrecedenteComponent,
   ],
   imports: [
     BrowserModule,

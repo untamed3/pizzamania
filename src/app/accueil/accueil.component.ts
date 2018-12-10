@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  title = 'Pizza Mania !';
+  private title = 'Pizza Mania !';
+  private lastPizza = JSON.parse(window.localStorage.getItem("lastPizza"));
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
-
 }
