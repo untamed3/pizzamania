@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PizzaModel} from "../../models/pizza.model";
 
 @Component({
   selector: 'app-accueil',
@@ -8,10 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AccueilComponent implements OnInit {
 
   private title = 'Pizza Mania !';
-  private lastPizza = JSON.parse(window.localStorage.getItem("lastPizza"));
 
   constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

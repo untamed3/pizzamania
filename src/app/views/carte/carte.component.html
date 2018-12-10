@@ -1,0 +1,7 @@
+<div *ngIf="isLoading === true">
+  <app-loading></app-loading>
+</div>
+<div *ngIf="isLoading === false">
+  <p *ngIf="pizzas === null">{{message}}</p>
+  <pre>{{pizzas | json}}</pre>
+</div>

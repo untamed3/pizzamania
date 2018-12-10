@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PizzaService} from "../services/pizza.service";
-import {PizzaModel} from "../models/pizza.model";
+import {PizzaService} from "../../services/pizza.service";
+import {PizzaModel} from "../../models/pizza.model";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
 
@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 export class CommandeComponent implements OnInit {
 
   constructor(private pizzaService:PizzaService, private router:Router) {}
+
   private pizza:PizzaModel = this.pizzaService.getPizzaCommande();
   private isLoading: boolean;
   private message:String = null;
@@ -26,10 +27,7 @@ export class CommandeComponent implements OnInit {
       (error) => { this.onError(error)});
   }
 
-
-
   public onSuccess(res:any){
-
     window.localStorage.setItem('lastPizza', JSON.stringify(this.pizza));
     this.isLoading = false;
     this.message = "Merci pour votre commande. (commande n° " + res.id + ")";

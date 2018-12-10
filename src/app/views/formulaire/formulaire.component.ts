@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PizzaModel} from "../models/pizza.model";
-import {PizzaService} from "../services/pizza.service";
+import {PizzaModel} from "../../models/pizza.model";
+import {PizzaService} from "../../services/pizza.service";
 
 @Component({
   selector: 'app-formulaire',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {PizzaService} from "../services/pizza.service";
+import {PizzaService} from "../../services/pizza.service";
 import {Router} from "@angular/router";
-import {PizzaModel} from "../models/pizza.model";
+import {PizzaModel} from "../../models/pizza.model";
 
 @Component({
   selector: 'app-pizza-precedente',

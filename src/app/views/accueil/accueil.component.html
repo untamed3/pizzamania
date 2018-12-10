@@ -1,0 +1,9 @@
+<div class="">
+  <h1>Bienvenu chez {{ title }} </h1>
+  <img src="../../../assets/img/pizza.jpg">
+  <div><br/>
+    <button routerLink="/formulaire">Préparez votre pizza !</button> <br/><br/>
+    <button *ngIf="lastPizza !== null" routerLink="/pizzaPrecedente">Commander votre précedente pizza !</button><br/><br/>
+    <button routerLink="/carte">Commander une pizza de notre carte !</button>
+  </div>
+</div>
