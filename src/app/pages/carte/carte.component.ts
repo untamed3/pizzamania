@@ -3,6 +3,7 @@ import {PizzaModel} from "../../models/pizza.model";
 import {PizzaService} from "../../services/pizza.service";
 import {Observable} from "rxjs";
 import {HttpErrorResponse} from "@angular/common/http";
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-carte',
@@ -28,11 +29,14 @@ export class CarteComponent implements OnInit {
   public onSuccess(res:any){
     this.isLoading = false;
     this.pizzas = res;
-    console.log(res);
   }
   public onError(err:HttpErrorResponse){
     this.isLoading = false;
     this.message = "Erreur de chargement";
+  }
+
+  public handleClickCommander(pizza:PizzaModel):void{
+    this.pizzaService.setPizzaCommande(pizza);
   }
 
 }

@@ -5,6 +5,8 @@ export class PizzaModel {
   magret: boolean;
   pate: string;
   base: string;
+  image: string;
+  prix: number;
 
 
   constructor() {
@@ -14,14 +16,19 @@ export class PizzaModel {
     this.magret = false;
     this.pate = null;
     this.base = null;
+    this.image = null;
+    this.prix = null;
   }
-  public prix():number {
+  public getPrix():number {
+    return this.prix;
+  }
+  public setNewPrix():number{
     let prix = 8;
     if(this.miel) { prix+=2; }
     if(this.jambon) { prix+=2; }
     if(this.magret) { prix+=4; }
     if(this.anchois) { prix+=1; }
-    return prix;
+    return this.prix = prix;
   }
 
 }

@@ -1,0 +1,14 @@
+<div class="pizza">
+  <img *ngIf="pizza.image !== null" [src]="pizza.image"/>
+  <p>Pate: {{(pizza.pate === "fine")? "fine":"épaisse"}}</p>
+  <p>Base: {{(pizza.base === "tomate")? "tomate":"crème"}}</p>
+  <div>
+    <p>Garniture:</p>
+    <p *ngIf="pizza.miel">Miel</p>
+    <p *ngIf="pizza.anchois">Anchois</p>
+    <p *ngIf="pizza.jambon">Jambon</p>
+    <p *ngIf="pizza.magret">Magret</p>
+  </div>
+  <i>Prix: {{pizza.prix}}</i>
+
+</div>

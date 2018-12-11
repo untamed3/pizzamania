@@ -4,16 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
-import { FormulaireComponent } from './views/formulaire/formulaire.component';
+import { FormulaireComponent } from './pages/formulaire/formulaire.component';
 import {RouterModule, Routes} from "@angular/router";
-import { CommandeComponent } from './views/commande/commande.component';
-import { AccueilComponent } from './views/accueil/accueil.component';
+import { CommandeComponent } from './pages/commande/commande.component';
+import { AccueilComponent } from './pages/accueil/accueil.component';
 import {PizzaService} from "./services/pizza.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { PizzaPrecedenteComponent } from './views/pizza-precedente/pizza-precedente.component';
-import { CarteComponent } from './views/carte/carte.component';
+import { PizzaPrecedenteComponent } from './pages/pizza-precedente/pizza-precedente.component';
+import { CarteComponent } from './pages/carte/carte.component';
 import { LoadingComponent } from './utils/loading/loading.component';
-import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
+import { PizzaDetailsComponent } from './utils/pizza-details/pizza-details.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},

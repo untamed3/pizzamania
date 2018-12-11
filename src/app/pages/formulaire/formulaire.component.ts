@@ -13,15 +13,15 @@ export class FormulaireComponent implements OnInit {
   constructor(private pizzaService:PizzaService) {
   }
 
-  ngOnInit() {
+  public ngOnInit():void {
     this.pizza = (this.pizzaService.getPizzaPrecedente() !== null )? this.pizzaService.getPizzaPrecedente() : new PizzaModel();
   }
 
-  handleClickCommander(){
+  public handleClickCommander():void{
     this.pizzaService.setPizzaCommande(this.pizza);
   }
 
-  validateForm(){
+  public validateForm():boolean{
     let pizza = this.pizza;
     return !pizza.base || !pizza.pate || !(pizza.anchois || pizza.magret || pizza.miel || pizza.jambon);
   }
