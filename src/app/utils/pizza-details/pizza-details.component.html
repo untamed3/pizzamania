@@ -1,5 +1,5 @@
 <div class="pizza">
-  <img *ngIf="pizza.image !== null" [src]="pizza.image"/>
+  <img class="img-fluid" *ngIf="pizza.image !== null" [src]="pizza.image"/>
   <p>Pate: {{(pizza.pate === "fine")? "fine":"épaisse"}}</p>
   <p>Base: {{(pizza.base === "tomate")? "tomate":"crème"}}</p>
   <div>

@@ -1,13 +1,14 @@
 <div>
 
   <style>
-    .ng-invalid:not(form) { color:red; }
-    .ng-valid[required], .ng-valid.required { color:green; }
+    .bd-exemple {
+      padding: 1.5rem;
+      margin-right: 0;
+      margin-left: 0;
+      border-width: .2rem;
+    }
   </style>
-
-  <h1>Pizza Mania</h1>
-
-  <form #formulaire="ngForm">
+  <form #formulaire="ngForm" class="bd-exemple">
     <div class="row col-sm-4">
 
       <label class="col-sm-4" for="pate" >Pate</label>
@@ -47,7 +48,7 @@
       </div>
     </div>
 
-    <h3>Prix: {{pizza.setNewPrix()}}</h3>
+    <h3>Prix: {{pizza.getPrix()}}</h3>
 
     <input value="Commander" routerLink="/commande" type="submit" (click)="handleClickCommander()" [disabled]="validateForm()" />
 

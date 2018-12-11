@@ -15,6 +15,7 @@ export class CarteComponent implements OnInit {
   private pizzas: Observable<PizzaModel[]> = null;
   private isLoading:Boolean;
   private message:String;
+  private prix:number = 15;
 
   constructor(private pizzaService:PizzaService) {}
 

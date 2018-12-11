@@ -1,10 +1,21 @@
 <div *ngIf="isLoading === true">
   <app-loading></app-loading>
 </div>
-<div *ngIf="isLoading === false">
+<div class="row" *ngIf="isLoading === false">
   <p *ngIf="pizzas === null">{{message}}</p>
-  <div *ngFor="let pizza of pizzas">
-    <app-pizza-details [pizza]="pizza"></app-pizza-details>
-    <button routerLink="/commande" (click)="handleClickCommander(pizza)" > Commander </button>
+  <div *ngIf="pizzas !== null" class="row">
+    <form class="col-sm-12" #formulaire="ngForm">
+      <div>
+        <label for="rangePrix">Prix max: {{prix}}</label>
+        <input type="range" min="0" max="15" class="form-control-range" id="rangePrix" name="rangePrix" [(ngModel)]="prix" >
+      </div>
+    </form>
+    <div class="col-md-4 col-sm-6" *ngFor="let pizza of pizzas">
+      <div *ngIf="pizza.prix <= prix">
+        <app-pizza-details [pizza]="pizza"></app-pizza-details>
+        <button routerLink="/commande" (click)="handleClickCommander(pizza)" > Commander </button>
+      </div>
+    </div>
   </div>
+
 </div>
