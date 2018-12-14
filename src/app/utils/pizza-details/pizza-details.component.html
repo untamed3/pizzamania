@@ -1,14 +1,15 @@
-<div class="pizza">
-  <img class="img-fluid" *ngIf="pizza.image !== null" [src]="pizza.image"/>
-  <p>Pate: {{(pizza.pate === "fine")? "fine":"épaisse"}}</p>
-  <p>Base: {{(pizza.base === "tomate")? "tomate":"crème"}}</p>
-  <div>
-    <p>Garniture:</p>
-    <p *ngIf="pizza.miel">Miel</p>
-    <p *ngIf="pizza.anchois">Anchois</p>
-    <p *ngIf="pizza.jambon">Jambon</p>
-    <p *ngIf="pizza.magret">Magret</p>
-  </div>
-  <i>Prix: {{pizza.prix}}</i>
+<div class="pizza card" style="margin: 10px;">
+  <img class="card-img-top" *ngIf="pizza.image !== null" [src]="pizza.image" width="200px"/>
 
+  <div class="card-body">
+    <p><b>Pate:</b> {{(pizza.pate === "fine")? "fine":"épaisse"}}</p>
+    <p><b>Base:</b> {{(pizza.base === "tomate")? "tomate":"crème"}}</p>
+    <p><b>Garniture:</b></p>
+    <p *ngIf="pizza.miel"> -Miel</p>
+    <p *ngIf="pizza.anchois"> -Anchois</p>
+    <p *ngIf="pizza.jambon"> -Jambon</p>
+    <p *ngIf="pizza.magret"> -Magret</p>
+
+    <i>Prix: {{pizza.prix | currency:'EUR'}}</i>
+  </div>
 </div>
