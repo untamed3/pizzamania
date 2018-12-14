@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable } from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {PizzaModel} from "../models/pizza.model";
 import {RequestOptions} from "@angular/http";
 
 @Injectable()
@@ -13,9 +12,9 @@ export class LoggerService {
 
   public logger(message:string, type:string){
     let variables = (
-      "?"+ type +"=" + message
+      type +"?message=" + message
     );
-    return this.httpClient.post(this.urlLogger + variables, null);
+    return this.httpClient.post(this.urlLogger + variables, null).subscribe();
   }
 
 }

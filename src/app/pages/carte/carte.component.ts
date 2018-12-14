@@ -4,6 +4,7 @@ import {PizzaService} from "../../services/pizza.service";
 import {Observable} from "rxjs";
 import {HttpErrorResponse} from "@angular/common/http";
 import {forEach} from "@angular/router/src/utils/collection";
+import {LoggerService} from "../../services/logger.service";
 
 @Component({
   selector: 'app-carte',
@@ -17,7 +18,9 @@ export class CarteComponent implements OnInit {
   private message:String;
   private prix:number = 15;
 
-  constructor(private pizzaService:PizzaService) {}
+  constructor(private pizzaService:PizzaService, private loggerService:LoggerService) {
+    this.loggerService.logger("carte", "info");
+  }
 
   ngOnInit() {
     this.isLoading = true;

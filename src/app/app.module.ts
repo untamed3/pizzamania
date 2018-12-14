@@ -14,6 +14,7 @@ import { PizzaPrecedenteComponent } from './pages/pizza-precedente/pizza-precede
 import { CarteComponent } from './pages/carte/carte.component';
 import { LoadingComponent } from './utils/loading/loading.component';
 import { PizzaDetailsComponent } from './utils/pizza-details/pizza-details.component';
+import {LoggerService} from "./services/logger.service";
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -43,6 +44,7 @@ const routes: Routes = [
   ],
   providers: [
     PizzaService,
+    LoggerService,
     HttpClient,
   ],
   bootstrap: [AppComponent]

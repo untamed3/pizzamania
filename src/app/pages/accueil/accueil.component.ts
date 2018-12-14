@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {PizzaModel} from "../../models/pizza.model";
+import {LoggerService} from "../../services/logger.service";
+import {Observable} from "rxjs";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-accueil',
@@ -10,7 +12,10 @@ export class AccueilComponent implements OnInit {
 
   private title = 'Pizza Mania !';
 
-  constructor() {}
+  constructor(private loggerService:LoggerService) {
+    this.loggerService.logger("accueil", "info");
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

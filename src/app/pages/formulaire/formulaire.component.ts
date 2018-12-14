@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PizzaModel} from "../../models/pizza.model";
 import {PizzaService} from "../../services/pizza.service";
+import {LoggerService} from "../../services/logger.service";
 
 @Component({
   selector: 'app-formulaire',
@@ -10,7 +11,8 @@ import {PizzaService} from "../../services/pizza.service";
 export class FormulaireComponent implements OnInit {
 
   private pizza:PizzaModel = null;
-  constructor(private pizzaService:PizzaService) {
+  constructor(private pizzaService:PizzaService, private loggerService:LoggerService) {
+    this.loggerService.logger("formulaire ","info");
   }
 
   public ngOnInit():void {

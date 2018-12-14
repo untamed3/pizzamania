@@ -20,9 +20,6 @@ export class PizzaModel {
     this.prix = null;
   }
   public getPrix():number {
-    return this.prix;
-  }
-  public setNewPrix():number{
     let prix = 8;
     if(this.miel) { prix+=2; }
     if(this.jambon) { prix+=2; }
