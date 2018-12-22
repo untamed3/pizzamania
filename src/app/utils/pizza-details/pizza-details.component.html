@@ -1,5 +1,6 @@
-<div class="pizza card" style="margin: 10px;">
-  <img class="card-img-top" *ngIf="pizza.image !== null" [src]="pizza.image" width="200px"/>
+<div class="pizza card bg-dark">
+  <p> </p>
+  <img class="card-img-top" *ngIf="pizza.image !== null" [src]="pizza.image"/>
 
   <div class="card-body">
     <p><b>Pate:</b> {{(pizza.pate === "fine")? "fine":"épaisse"}}</p>
@@ -9,6 +10,10 @@
     <p *ngIf="pizza.anchois"> -Anchois</p>
     <p *ngIf="pizza.jambon"> -Jambon</p>
     <p *ngIf="pizza.magret"> -Magret</p>
+    <p *ngIf="!pizza.miel"></p>
+    <p *ngIf="!pizza.anchois"></p>
+    <p *ngIf="!pizza.jambon"></p>
+    <p *ngIf="!pizza.magret"></p>
 
     <i>Prix: {{pizza.prix | currency:'EUR'}}</i>
   </div>

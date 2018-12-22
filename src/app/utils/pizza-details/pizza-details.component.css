@@ -1,0 +1,11 @@
+.pizza{
+  position: relative;
+  margin: 10px;
+  min-height: 450px;
+}
+i{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px; 
+}

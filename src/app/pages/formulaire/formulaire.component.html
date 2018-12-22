@@ -1,56 +1,50 @@
-<div>
-
-  <style>
-    .bd-exemple {
-      padding: 1.5rem;
-      margin-right: 0;
-      margin-left: 0;
-      border-width: .2rem;
-    }
-  </style>
-  <form #formulaire="ngForm" class="bd-exemple">
-    <div class="row col-sm-4">
-
-      <label class="col-sm-4" for="pate" >Pate</label>
-      <select class="col-sm-4" id="pate" name="pate" [(ngModel)]="pizza.pate" ng-model="pate">
+<div class="row col-sm-4 offset-4">
+  <h1 class="">Faites votre choix</h1>
+  <form #formulaire="ngForm">
+    <div class="row">
+      <label for="pate" >Pate</label>
+      <select class="form-control" id="pate" name="pate" [(ngModel)]="pizza.pate" ng-model="pate">
         <option value="fine">Fine</option>
         <option value="epaisse">Epaisse</option>
       </select>
-
     </div>
-    <div class="row col-sm-4">
-
-      <label class="col-sm-4">Base</label>
-
-      <input type="radio" name="base" id="tomate" value="tomate" [(ngModel)]="pizza.base"/> <label for="tomate">Tomates</label>
-      <input type="radio" name="base" id="creme" value="creme" [(ngModel)]="pizza.base"/> <label for="creme">Crème</label>
+    <div class="">
+      <label class="">Base :</label>
+      <div class="form-check">
+        <input class="form-check-input-inline" type="radio" name="base" id="tomate" value="tomate" [(ngModel)]="pizza.base"/>
+        <label class="" for="tomate">Tomates</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input-inline" type="radio" name="base" id="creme" value="creme" [(ngModel)]="pizza.base"/>
+        <label class="" for="creme">Crème</label>
+      </div>
     </div>
 
-    <div class="row col-sm-4">
-      <h3 class="col-sm-4">Ingredients</h3>
-      <div class="row col-sm-12">
-        <div class="col-sm-6">
-          <input type="checkbox" id="anchois" name="anchois" [(ngModel)]="pizza.anchois"/>
-          <label for="anchois">Anchois 1€</label>
+    <div class="row">
+      <h3 class="">Ingredients</h3>
+      <div class="row col-sm-12 ">
+        <div class="col-sm-6 form-check">
+          <input class="form-check-input" type="checkbox" id="anchois" name="anchois" [(ngModel)]="pizza.anchois" />
+          <label class="form-check-label" for="anchois">Anchois 1€</label>
         </div>
-        <div class="col-sm-6">
-          <input type="checkbox" id="jambon" name="jambon" [(ngModel)]="pizza.jambon"/>
-          <label for="jambon">Jambon 2€</label>
+        <div class="col-sm-6 form-check">
+          <input class="form-check-input" type="checkbox" id="jambon" name="jambon" [(ngModel)]="pizza.jambon"/>
+          <label class="form-check-label" for="jambon">Jambon 2€</label>
         </div>
-        <div class="col-sm-6">
-          <input type="checkbox" id="miel" name="miel" [(ngModel)]="pizza.miel"/>
-          <label for="miel">Miel 2€</label>
+        <div class="col-sm-6 form-check">
+          <input  class="form-check-input" type="checkbox" id="miel" name="miel" [(ngModel)]="pizza.miel"/>
+          <label class="form-check-label" for="miel">Miel 2€</label>
         </div>
-        <div class="col-sm-6">
-          <input type="checkbox" id="magret" name="magret" [(ngModel)]="pizza.magret"/>
-          <label for="magret">Magret 4€</label>
+        <div class="col-sm-6 form-check">
+          <input class="form-check-input" type="checkbox" id="magret" name="magret" [(ngModel)]="pizza.magret"/>
+          <label class="form-check-label" for="magret">Magret 4€</label>
         </div>
       </div>
     </div>
 
     <h3>Prix: {{pizza.getPrix() | currency:'EUR'}} </h3>
 
-    <input value="Commander" routerLink="/commande" type="submit" (click)="handleClickCommander()" [disabled]="validateForm()" />
+    <input class="btn btn-dark" value="Commander" routerLink="/commande" type="submit" (click)="handleClickCommander()" [disabled]="validateForm()" />
 
   </form>
 </div>

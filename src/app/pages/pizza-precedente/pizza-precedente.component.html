@@ -1,7 +1,12 @@
 <div>
-  <app-pizza-details [pizza]="lastPizza"></app-pizza-details>
-
-  <input value="Commander votre précedente pizza" routerLink="/commande" type="submit" (click)="handleClickCommander()" />
-  <input value="Modifier votre pizza" routerLink="/formulaire" type="submit" (click)="handleClickModifier()" />
+  <div class="col-sm-4 offset-4">
+    <app-pizza-details [pizza]="lastPizza"></app-pizza-details>
+  </div>
+  <div class="col-sm-6">
+    <input class="btn btn-primary" value="Commander votre précedente pizza" routerLink="/commande" type="submit" (click)="handleClickCommander()" />
+  </div>
+  <div class="col-sm-6">
+    <input class="btn btn-secondary" value="Modifier votre pizza" routerLink="/formulaire" type="submit" (click)="handleClickModifier()" />
+  </div>
 
 </div>
