@@ -10,7 +10,7 @@ import {LoggerService} from "../../services/logger.service";
 })
 export class FormulaireComponent implements OnInit {
 
-  private pizza:PizzaModel = null;
+  pizza:PizzaModel = null;
   constructor(private pizzaService:PizzaService, private loggerService:LoggerService) {
     this.loggerService.logger("formulaire ","info");
   }

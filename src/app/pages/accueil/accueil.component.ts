@@ -10,7 +10,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 })
 export class AccueilComponent implements OnInit {
 
-  private title = 'Pizza Mania !';
+  title = 'Pizza Mania !';
 
   constructor(private loggerService:LoggerService) {
     this.loggerService.logger("accueil", "info");

@@ -14,9 +14,10 @@ export class CommandeComponent implements OnInit {
 
   constructor(private pizzaService:PizzaService, private loggerService:LoggerService, private router:Router) {}
 
-  private pizza:PizzaModel = this.pizzaService.getPizzaCommande();
-  private isLoading: boolean;
-  private message:String = null;
+  pizza:PizzaModel = this.pizzaService.getPizzaCommande();
+  isLoading: boolean;
+  message:String = null;
+  classMessage:String = "alert alert-success";
 
   ngOnInit() {
     this.isLoading = true;
@@ -39,6 +40,7 @@ export class CommandeComponent implements OnInit {
   public onError(err:HttpErrorResponse){
     this.isLoading = false;
     this.message = "Une erreur s'est produite, sry.";
+    this.classMessage = "alert alert-warning"
     this.loggerService.logger("Erreur commande","error");
   }
 

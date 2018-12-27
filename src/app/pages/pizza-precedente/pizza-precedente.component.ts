@@ -11,7 +11,7 @@ import {PizzaModel} from "../../models/pizza.model";
 export class PizzaPrecedenteComponent implements OnInit {
 
 
-  private lastPizza:PizzaModel = null;
+  lastPizza:PizzaModel = null;
 
   constructor(private pizzaService:PizzaService, private router:Router) { }
 
@@ -19,7 +19,7 @@ export class PizzaPrecedenteComponent implements OnInit {
     let pizza = JSON.parse(window.localStorage.getItem("lastPizza"));
     this.lastPizza = Object.assign(new PizzaModel(), pizza);
     if(this.lastPizza === null){
-      this.router.navigate(['formulaire']);
+      this.router.navigate(['formulaire']); //Si l'utilisateur n'a jamais commandé de pizza
     }
   }
 

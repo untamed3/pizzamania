@@ -3,7 +3,7 @@
 </div>
 <div *ngIf="isLoading === false">
 
-  <p *ngIf="pizzas === null">{{message}}</p>
+  <div *ngIf="pizzas === null" class="alert alert-warning">{{message}}</div>
 
   <div *ngIf="pizzas !== null" >
     <div>

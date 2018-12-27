@@ -13,10 +13,10 @@ import {LoggerService} from "../../services/logger.service";
 })
 export class CarteComponent implements OnInit {
 
-  private pizzas: Observable<PizzaModel[]> = null;
-  private isLoading:Boolean;
-  private message:String;
-  private prix:number = 15;
+  pizzas: Observable<PizzaModel[]> = null;
+  isLoading:Boolean;
+  message:String;
+  prix:number = 15;
 
   constructor(private pizzaService:PizzaService, private loggerService:LoggerService) {
     this.loggerService.logger("carte", "info");
